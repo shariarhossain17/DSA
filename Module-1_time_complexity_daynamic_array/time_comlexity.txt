@@ -1,0 +1,57 @@
+what is time complexity??
+
+Time complexity is describe that 
+
+
+
+
+Big o(n)
+
+program depend on n here is the example
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int ar[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> ar[i];
+    }
+
+    int s = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        s += ar[i];
+    }
+
+    cout << s;
+    return 0;
+}
+
+
+this operation will end n(th). if n is n/2,n+2,or n*2 it will be o(n). suppose you have 10000000 number if you sum 1core + 1 it will be 2 core right. if you multiply 1core * 2 it will be 2 core just think that after 1 you have seven zero value.this seven 0 dosen't change if you multiply or sum.this operation takes 10^7 
+
+
+log(n);
+
+logn operation is better than o(n). logn take operation in 60 times.this operation take 10^18. suppose you have a number 1000 you can operation in 1000/10=100,1000/10=10,10/10=1; you completed operation in 3 times max 4 times.but if you can operation with o(n) this operation will 1000 times thats means n times.logn operation will be divided and multiply;
+
+
+
+sqrt(N)
+
+sqrt(n) take operation 10^14. suppose you have number 100000000000000. if you root over this  this number will be 10000000. sqrt basically use for divisor. suppose you have number 36 you want to divisor this number your value will be 1,2,3,4,6,36,18,12,9.
+
+
+o(n^2) or o(nm);
+
+o(n^2) take input maximum 10^3 that means 1000.
+
+example suppose you have number 3. first you start a loop and start another loop  as child so first will run 1 to 3 and the second lop will run 3 every time. if the parent loop is one the child run 3 times; if the parent loop is two the child loop run 3 times and the parent loop is 3 the child loop is 3 times. in total 3+3+3 = 9 times. if you multiply 3*3=9 right so this the o(n^2) complexity;
+
+
