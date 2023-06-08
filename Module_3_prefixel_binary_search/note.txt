@@ -1,0 +1,37 @@
+prefix sum;
+
+
+array [10,20,30,40,50];
+
+
+prefix sum = total sum for per index;
+
+***formula for prefix sum = ar[i] + pre[i-1];
+
+the new array is
+pre [10,30,60,100,150]
+
+
+now calculate range sum;
+
+you range l=3,r=5
+
+if you substraction pre[r] - pre[l-1] you got the answer.
+
+pre[r] means 150 and pre[l-1] = 30 = 150 -30 =120
+
+if the l is 0 you can condition if(l==0)cout<<pre[r];
+
+
+Binnary search
+
+array size is 5;
+int ar[10,20,30,40,50]
+
+first need to find middle of  array. thats why wee need to the array first size is 0 and the right size is  n-1 that means 4;
+
+now implement the math logic
+l+r/2 = 2;
+
+
+then the array index is 2. the declare array middle is arr[2] that means 30;
