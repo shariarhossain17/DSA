@@ -15,12 +15,5 @@ public:
 int main()
 {
 
-    Node a(20);
-    Node b(0);
-
-    a.next = &b;
-
-    cout << a.val << endl;
-    cout << (*a.next).val << endl;
     return 0;
 }
