@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -62,34 +61,45 @@ Node *intput_tree()
     return root;
 }
 
-void list_order(Node *root)
+int findMax(Node *root)
 {
     if (root == NULL)
-        return;
+        return INT_MIN;
 
-    queue<Node *> q;
-    q.push(root);
-
-    while (!q.empty())
+    if (root->left == NULL && root->right == NULL)
     {
-        Node *f = q.front();
-        q.pop();
-
-        cout << f->val << " ";
-
-        if (f->left)
-            q.push(f->left);
-
-        if (f->right)
-            q.push(f->right);
+        return root->val;
     }
+
+    int leftMax = findMax(root->left);
+    int rightMax = findMax(root->right);
+
+    int maxValue = max(leftMax, rightMax);
+
+    return maxValue;
+}
+
+int findMinLeaf(Node *root)
+{
+    if (root == NULL)
+        return INT_MAX;
+
+    if (root->left == NULL && root->right == NULL)
+        return root->val;
+
+    int leftMin = findMinLeaf(root->left);
+    int rightMin = findMinLeaf(root->right);
+
+    return min(leftMin, rightMin);
 }
 
 int main()
 {
     Node *root = intput_tree();
 
-    list_order(root);
+    int max = findMax(root);
+    int min = findMinLeaf(root);
 
+    cout << max << " " << min;
     return 0;
 }

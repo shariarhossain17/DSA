@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -64,6 +63,8 @@ Node *intput_tree()
 
 void list_order(Node *root)
 {
+
+    int sum = 0;
     if (root == NULL)
         return;
 
@@ -75,7 +76,7 @@ void list_order(Node *root)
         Node *f = q.front();
         q.pop();
 
-        cout << f->val << " ";
+        sum += f->val;
 
         if (f->left)
             q.push(f->left);
@@ -83,6 +84,8 @@ void list_order(Node *root)
         if (f->right)
             q.push(f->right);
     }
+
+    cout << sum;
 }
 
 int main()
@@ -90,6 +93,5 @@ int main()
     Node *root = intput_tree();
 
     list_order(root);
-
     return 0;
 }

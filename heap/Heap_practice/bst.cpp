@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node
 {
 public:
@@ -16,15 +15,17 @@ public:
     }
 };
 
-Node *intput_tree()
+Node *input_tree()
 {
-    int val;
-    cin >> val;
+    int x;
+    cin >> x;
+
     Node *root;
-    if (val == -1)
-        root = NULL;
+
+    if (x == -1)
+        root == NULL;
     else
-        root = new Node(val);
+        root = new Node(x);
 
     queue<Node *> q;
     if (root)
@@ -36,10 +37,11 @@ Node *intput_tree()
         q.pop();
 
         // amr ja kaj ta
+
         int l, r;
         cin >> l >> r;
-        Node *left;
-        Node *right;
+        Node *left, *right;
+
         if (l == -1)
             left = NULL;
         else
@@ -52,7 +54,8 @@ Node *intput_tree()
 
         p->left = left;
         p->right = right;
-        // children gula push koro
+        // q te push kora
+
         if (p->left)
             q.push(p->left);
         if (p->right)
@@ -62,11 +65,8 @@ Node *intput_tree()
     return root;
 }
 
-void list_order(Node *root)
+void level_order(Node *root)
 {
-    if (root == NULL)
-        return;
-
     queue<Node *> q;
     q.push(root);
 
@@ -75,7 +75,11 @@ void list_order(Node *root)
         Node *f = q.front();
         q.pop();
 
+        // ja kicu kora
+
         cout << f->val << " ";
+
+        // children gula k rakha
 
         if (f->left)
             q.push(f->left);
@@ -84,12 +88,9 @@ void list_order(Node *root)
             q.push(f->right);
     }
 }
-
 int main()
 {
-    Node *root = intput_tree();
-
-    list_order(root);
-
+    Node *root = input_tree();
+    level_order(root);
     return 0;
 }
